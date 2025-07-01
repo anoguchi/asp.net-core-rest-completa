@@ -1,4 +1,5 @@
-﻿using Business.Models;
+﻿using System.Reflection.Metadata.Ecma335;
+using Business.Models;
 
 namespace Business.Interfaces
 {
@@ -6,9 +7,10 @@ namespace Business.Interfaces
     {
         Task<Perfil?> ObterPorDocumento(string documento);
         Task<Perfil?> ObterPorEmail(string email);
-        Task<Endereco> ObterEnderecoPorPerfil(Guid id);
+        Task<Endereco?> ObterEnderecoPorPerfil(Guid id);
         Task<IEnumerable<Perfil>> ObterTodosAtivos();
         Task<IEnumerable<Perfil>> ObterPorTipoPerfil(TipoPerfil tipoPerfil);
         Task<IEnumerable<Perfil>> ObterPorNome(string nome);
+        Task RemoverEnderecoPerfil(Endereco endereco);
     }
 }
