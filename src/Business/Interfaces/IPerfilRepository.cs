@@ -4,11 +4,11 @@ namespace Business.Interfaces
 {
     public interface IPerfilRepository : IRepository<Perfil>
     {
-        Task<Perfil?> ObterPorDocumentoAsync(string documento);
-        Task<Perfil?> ObterPorEmailAsync(string email);
+        Task<Perfil?> ObterPorDocumento(string documento);
+        Task<Perfil?> ObterPorEmail(string email);
         Task<Endereco> ObterEnderecoPorPerfil(Guid id);
-        Task<IEnumerable<Perfil>> ObterTodosAtivosAsync();
-        Task<IEnumerable<Perfil>> ObterPorTipoPerfilAsync(TipoPerfil tipoPerfil);
-        Task<IEnumerable<Perfil>> ObterPorNomeAsync(string nome);
+        Task<IEnumerable<Perfil>> ObterTodosAtivos();
+        Task<IEnumerable<Perfil>> ObterPorTipoPerfil(TipoPerfil tipoPerfil);
+        Task<IEnumerable<Perfil>> ObterPorNome(string nome);
     }
 }
