@@ -8,9 +8,10 @@ namespace Business.Services
     public class PerfilService : BaseService, IPerfilService
     {
         private readonly IPerfilRepository _perfilRepository;
-        public PerfilService(IPerfilRepository perfilRepository)
+        public PerfilService(IPerfilRepository perfilRepository, INotificador notificador) : base(notificador)
         {
             _perfilRepository = perfilRepository;
+
         }
         public async Task Adicionar(Perfil perfil)
         {

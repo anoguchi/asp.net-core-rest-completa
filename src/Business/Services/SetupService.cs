@@ -9,7 +9,7 @@ namespace Business.Services
     {
         private readonly ISetupRepository _setupRepository;
 
-        public SetupService(ISetupRepository setupRepository)
+        public SetupService(ISetupRepository setupRepository, INotificador notificador) : base(notificador)
         {
             _setupRepository = setupRepository;
         }
