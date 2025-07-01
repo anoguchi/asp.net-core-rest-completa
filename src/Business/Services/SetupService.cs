@@ -1,6 +1,7 @@
 ﻿
 using Business.Interfaces;
 using Business.Models;
+using Business.Models.Validations;
 
 namespace Business.Services
 {
@@ -14,11 +15,13 @@ namespace Business.Services
         }
         public async Task Adicionar(Setup setup)
         {
+            if (!ExecutarValidacao(new SetupValidation(), setup)) return;
             await _setupRepository.Adicionar(setup);
         }
 
         public async Task Atualizar(Setup setup)
         {
+            if (!ExecutarValidacao(new SetupValidation(), setup)) return;
             await _setupRepository.Atualizar(setup);
         }
 
